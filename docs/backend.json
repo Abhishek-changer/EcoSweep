@@ -1,0 +1,67 @@
+{
+  "entities": {
+    "Resident": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Resident",
+      "type": "object",
+      "description": "Represents a resident who uses the EcoSweep service.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the resident."
+        },
+        "firstName": {
+          "type": "string",
+          "description": "First name of the resident."
+        },
+        "lastName": {
+          "type": "string",
+          "description": "Last name of the resident."
+        },
+        "email": {
+          "type": "string",
+          "description": "Email address of the resident.",
+          "format": "email"
+        },
+        "address": {
+          "type": "string",
+          "description": "Full address of the resident."
+        },
+        "phone": {
+          "type": "string",
+          "description": "Phone number of the resident."
+        }
+      },
+      "required": [
+        "id",
+        "email"
+      ]
+    }
+  },
+  "auth": {
+    "providers": [
+      "password"
+    ]
+  },
+  "firestore": {
+    "structure": [
+      {
+        "path": "/residents/{residentId}",
+        "definition": {
+          "entityName": "Resident",
+          "schema": {
+            "$ref": "#/backend/entities/Resident"
+          },
+          "description": "Stores resident data. Each resident can only access their own document, which is enforced by path-based security rules.",
+          "params": [
+            {
+              "name": "residentId",
+              "description": "The unique identifier for the resident. This ID is used for access control, ensuring users can only access their own data."
+            }
+          ]
+        }
+      }
+    ],
+    "reasoning": "The Firestore structure is designed to ensure secure and scalable data management for the EcoSweep application. It prioritizes authorization independence and clear access control. Residents' data is stored under `/residents/{residentId}`. This structure enables simple, path-based security rules where each resident can only access their own data, thus maintaining privacy and data integrity. The absence of subcollections simplifies the overall structure and reduces the need for complex security rules.\n\nThe design achieves Authorization Independence by avoiding any `get()` calls in the security rules. Access control is directly tied to the `residentId` in the path, ensuring each resident can only access their own data. The structure also supports QAPs by enabling secure `list` operations, as listing residents is not a permitted operation in this model, thus preventing unauthorized access to resident data."
+  }
+}

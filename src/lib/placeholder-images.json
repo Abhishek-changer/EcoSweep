@@ -1,0 +1,20 @@
+[
+  {
+    "id": "ecosweep-hero",
+    "description": "Lush green forest canopy",
+    "imageUrl": "https://images.unsplash.com/photo-1488330890490-c291ecf62571?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxncmVlbiUyMGZvcmVzdHxlbnwwfHx8fDE3NjQ2NzQ1MTV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    "imageHint": "green forest"
+  },
+  {
+    "id": "community-cleanup",
+    "description": "Group of volunteers cleaning up a park",
+    "imageUrl": "https://kind.osu.edu/posts/61d92791-ed6f-49e0-aae0-44b3d438fa3b/images/10-12-21-occse-off-campus-clean-up-56-1-5760x3568.jpg",
+    "imageHint": "community cleanup"
+  },
+  {
+    "id": "recycling-bins",
+    "description": "Colorful recycling bins lined up",
+    "imageUrl": "https://cdn.pixabay.com/photo/2014/06/20/13/31/recycling-bins-373156_1280.jpg",
+    "imageHint": "recycling bins"
+  }
+]
