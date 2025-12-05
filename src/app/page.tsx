@@ -67,7 +67,7 @@ function HomePage() {
                 <p className="text-foreground/80">
                   Join local events to clean up our parks, rivers, and neighborhoods. Every hand helps in preserving our natural spaces for future generations.
                 </p>
-                <Button variant="outline">Find an Event Near You</Button>
+                <Button>Find an Event Near You</Button>
               </div>
             </div>
             <div className="grid md:grid-cols-2 gap-8 items-center mt-16">
@@ -76,7 +76,7 @@ function HomePage() {
                 <p className="text-foreground/80">
                   Our core mission is to provide convenient, door-to-door pickup for your electronic, chemical, and specialty waste, ensuring it never ends up in a landfill.
                 </p>
-                <Button variant="link" asChild><Link href="/schedule">Schedule a pickup</Link></Button>
+                <Button asChild><Link href="/schedule">Schedule a pickup</Link></Button>
               </div>
                {recyclingImage && (
                 <div className="rounded-lg overflow-hidden shadow-xl md:order-1">

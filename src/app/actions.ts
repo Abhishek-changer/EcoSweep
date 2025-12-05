@@ -14,8 +14,9 @@ export async function submitWastePickupRequest(data: RequestData) {
       residentLocation: data.residentLocation,
     });
     return { success: true, data: result };
-  } catch (error) {
+  } catch (error: any) {
     console.error('Error assigning collector:', error);
-    return { success: false, error: 'An unexpected error occurred while assigning a collector.' };
+    const errorMessage = error instanceof Error ? error.message : 'An unexpected error occurred while assigning a collector.';
+    return { success: false, error: errorMessage };
   }
 }
